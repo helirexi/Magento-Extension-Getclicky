@@ -1,0 +1,54 @@
+<?php
+
+/**
+ * @package     Optimiseweb_Getclicky
+ * @author      Kathir Vel (sid@optimiseweb.co.uk)
+ * @copyright   Copyright (c) 2013 Optimise Web Limited
+ * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+$getClickyGoalEnabled = Mage::getStoreConfig('optimisewebgetclickyconfig/goal_checkout_onepage_success/enabled');
+$getClickyGoalType = Mage::getStoreConfig('optimisewebgetclickyconfig/goal_checkout_onepage_success/goal_type');
+if (Mage::getStoreConfig('optimisewebgetclickyconfig/goal_checkout_onepage_success/goal_name')) {
+    $getClickyGoalName = Mage::getStoreConfig('optimisewebgetclickyconfig/goal_checkout_onepage_success/goal_name');
+} else {
+    $getClickyGoalName = 'Onepage Checkout Success';
+}
+if (Mage::getStoreConfig('optimisewebgetclickyconfig/goal_checkout_onepage_success/goal_id')) {
+    $getClickyGoalId = Mage::getStoreConfig('optimisewebgetclickyconfig/goal_checkout_onepage_success/goal_id');
+} else {
+    $getClickyGoalType = 'dynamic';
+}
+
+$getClickyGoalRevenue = Mage::getStoreConfig('optimisewebgetclickyconfig/goal_checkout_onepage_success/goal_revenue');
+
+$getClickyGrandTotal = FALSE;
+
+/* Get Order Grand Total */
+if ($getClickyGoalRevenue) {
+    $getClickyOrder = Mage::getModel('sales/order')->load(Mage::getSingleton('checkout/session')->getLastOrderId());
+    $getClickyGrandTotal = number_format($getClickyOrder->getGrandTotal(), 2, '.', '');
+}
+
+/* Build the Code */
+$js = "";
+$js .= "<script type=\"text/javascript\">\n";
+$js .= "var clicky_custom = clicky_custom || {};\n";
+$js .= "clicky_custom.goal = {\n";
+if ($getClickyGoalType == 'dynamic') {
+    $js .= "name: \"" . $getClickyGoalName . "\"";
+} else {
+    $js .= "id: \"" . $getClickyGoalId . "\"";
+}
+if ($getClickyGoalRevenue AND $getClickyGrandTotal) {
+    $js .= ",\n";
+    $js .= "revenue: \"" . $getClickyGrandTotal . "\"";
+}
+$js .= "\n";
+$js .= "};\n";
+$js .= "</script>\n";
+
+echo $js;
+
+/* $subTotal = $order->getSubtotal(); */
+/* $order->getId(); */
+/* $order->getIncrementId(); */

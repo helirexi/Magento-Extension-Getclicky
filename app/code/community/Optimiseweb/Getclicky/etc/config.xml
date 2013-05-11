@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+* @package    Optimiseweb_Getclicky
+* @author     Kathir Vel (sid@optimiseweb.co.uk)
+* @copyright  Copyright (c) 2013 Optimise Web Limited
+* @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+*/
+-->
+<config>
+
+    <modules>
+        <Optimiseweb_Getclicky>
+            <version>0.1.8</version>
+        </Optimiseweb_Getclicky>
+    </modules>
+
+    <frontend>
+        <layout>
+            <updates>
+                <getclicky>
+                    <file>optimiseweb_getclicky.xml</file>
+                </getclicky>
+            </updates>
+        </layout>
+    </frontend>
+
+    <adminhtml>
+        <menu>
+            <optimiseweball translate="title" module="getclicky">
+                <title>Optimise Web</title>
+                <sort_order>71</sort_order>
+                <children>
+                    <getclicky translate="title" module="getclicky">
+                        <title>GetClicky Integration</title>
+                        <sort_order>5</sort_order>
+                        <action>adminhtml/system_config/edit/section/optimisewebgetclickyconfig</action>
+                    </getclicky>
+                </children>
+            </optimiseweball>
+        </menu>
+    </adminhtml>
+
+    <global>
+
+        <blocks>
+            <getclicky>
+                <class>Optimiseweb_Getclicky_Block</class>
+            </getclicky>
+        </blocks>
+
+        <helpers>
+            <getclicky>
+                <class>Optimiseweb_Getclicky_Helper</class>
+            </getclicky>
+        </helpers>
+
+        <models>
+            <getclicky>
+                <class>Optimiseweb_Getclicky_Model</class>
+            </getclicky>
+        </models>
+
+    </global>
+
+    <default>
+        <optimisewebgetclickyconfig>
+            <getclickygeneral>
+                <enabled>0</enabled>
+                <tracker_type>1</tracker_type>
+                <affiliate_display>1</affiliate_display>
+                <affiliate_link>http://getclicky.com/240502</affiliate_link>
+                <affiliate_badge>//static.getclicky.com/media/links/badge.gif</affiliate_badge>
+                <affiliate_title>GetClicky Web Analytics</affiliate_title>
+            </getclickygeneral>
+            <goal_checkout_onepage_success>
+                <enabled>0</enabled>
+                <goal_type>dynamic</goal_type>
+                <goal_name>Onepage Checkout Success</goal_name>
+                <goal_revenue>1</goal_revenue>
+            </goal_checkout_onepage_success>
+            <goal_checkout_onepage_entry>
+                <enabled>0</enabled>
+                <goal_type>dynamic</goal_type>
+                <goal_name>Onepage Checkout Entry</goal_name>
+            </goal_checkout_onepage_entry>
+            <goal_cart_page>
+                <enabled>0</enabled>
+                <goal_type>dynamic</goal_type>
+                <goal_name>Cart Page</goal_name>
+            </goal_cart_page>
+        </optimisewebgetclickyconfig>
+    </default>
+
+</config>

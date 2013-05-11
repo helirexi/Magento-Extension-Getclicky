@@ -1,0 +1,58 @@
+<?php
+/**
+ * @package     Optimiseweb_Getclicky
+ * @author      Kathir Vel (sid@optimiseweb.co.uk)
+ * @copyright   Copyright (c) 2013 Optimise Web Limited
+ * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+$clicky = Mage::helper('getclicky')->getClickyData();
+
+/* Tracker types */
+switch ($clicky->TrackerType) {
+    case 1:
+        /* Default Tracker */
+        ?>
+        <!-- GetClicky - Default -->
+        <?php if ($clicky->AffiliateDisplay): ?>
+            <a title="<?php echo $clicky->AffiliateTitle; ?>" href="<?php echo $clicky->AffiliateLink; ?>"><img alt="<?php echo $clicky->AffiliateTitle; ?>" src="<?php echo $clicky->AffiliateBadge; ?>" border="0" /></a>
+        <?php endif; ?>
+        <script src="//static.getclicky.com/js" type="text/javascript"></script>
+        <script type="text/javascript">try {
+                clicky.init(<?php echo $clicky->SiteId; ?>);
+            } catch (e) {
+            }</script>
+        <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/<?php echo $clicky->SiteId; ?>ns.gif" /></p></noscript>
+        <?php
+        break;
+    /* Asynchronous Tracker */
+    case 2:
+        ?>
+        <!-- GetClicky - Asynchronous -->
+        <?php if ($clicky->AffiliateDisplay): ?>
+            <a title="<?php echo $clicky->AffiliateTitle; ?>" href="<?php echo $clicky->AffiliateLink; ?>"><img alt="<?php echo $clicky->AffiliateTitle; ?>" src="<?php echo $clicky->AffiliateBadge; ?>" border="0" /></a>
+        <?php endif; ?>
+        <script type="text/javascript">
+            var clicky_site_ids = clicky_site_ids || [];
+            clicky_site_ids.push(<?php echo $clicky->SiteId; ?>);
+            (function() {
+                var s = document.createElement('script');
+                s.type = 'text/javascript';
+                s.async = true;
+                s.src = '//static.getclicky.com/js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(s);
+            })();
+        </script>
+        <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/<?php echo $clicky->SiteId; ?>ns.gif" /></p></noscript>
+        <?php
+        break;
+    /* Non-Javascript Tracker */
+    case 3:
+        ?>
+        <!-- GetClicky - Non-Javascript -->
+        <?php if ($clicky->AffiliateDisplay): ?>
+            <a title="<?php echo $clicky->AffiliateTitle; ?>" href="<?php echo $clicky->AffiliateLink; ?>"><img alt="<?php echo $clicky->AffiliateTitle; ?>" src="<?php echo $clicky->AffiliateBadge; ?>" border="0" /></a>
+        <?php endif; ?>
+        <img alt="Clicky" width="1" height="1" src="//in.getclicky.com/<?php echo $clicky->SiteId; ?>ns.gif" />
+        <?php
+        break;
+}
