@@ -8,16 +8,14 @@
  * @copyright   Copyright (c) 2013 Optimise Web Limited
  * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
-class Optimiseweb_Getclicky_Helper_Data extends Mage_Core_Helper_Abstract
-{
+class Optimiseweb_Getclicky_Helper_Data extends Mage_Core_Helper_Abstract {
 
     /**
      * Check if enabled
      *
      * @return boolean
      */
-    public function isEnabled()
-    {
+    public function isEnabled() {
         return (bool) Mage::getStoreConfig('optimisewebgetclickyconfig/getclickygeneral/enabled');
     }
 
@@ -26,8 +24,7 @@ class Optimiseweb_Getclicky_Helper_Data extends Mage_Core_Helper_Abstract
      *
      * @return object $data
      */
-    public function getClickyData()
-    {
+    public function getClickyData() {
         $data = new stdClass();
         $data->SiteId = Mage::getStoreConfig('optimisewebgetclickyconfig/getclickygeneral/site_id');
         $data->TrackerType = Mage::getStoreConfig('optimisewebgetclickyconfig/getclickygeneral/tracker_type');

@@ -11,11 +11,12 @@
 
     <modules>
         <Optimiseweb_Getclicky>
-            <version>0.1.8</version>
+            <version>0.1.9</version>
         </Optimiseweb_Getclicky>
     </modules>
 
     <frontend>
+        
         <layout>
             <updates>
                 <getclicky>
@@ -23,6 +24,17 @@
                 </getclicky>
             </updates>
         </layout>
+
+        <translate>
+            <modules>
+                <Optimiseweb_Getclicky>
+                    <files>
+                        <default>Optimiseweb_Getclicky.csv</default>
+                    </files>
+                </Optimiseweb_Getclicky>
+            </modules>
+        </translate>
+
     </frontend>
 
     <adminhtml>
