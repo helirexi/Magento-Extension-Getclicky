@@ -11,7 +11,7 @@
 
     <modules>
         <Optimiseweb_Getclicky>
-            <version>0.1.9</version>
+            <version>0.1.10</version>
         </Optimiseweb_Getclicky>
     </modules>
 
@@ -38,6 +38,7 @@
     </frontend>
 
     <adminhtml>
+        
         <menu>
             <optimiseweball translate="title" module="getclicky">
                 <title>Optimise Web</title>
@@ -51,6 +52,17 @@
                 </children>
             </optimiseweball>
         </menu>
+        
+        <translate>
+            <modules>
+                <Optimiseweb_Getclicky>
+                    <files>
+                        <default>Optimiseweb_Getclicky.csv</default>
+                    </files>
+                </Optimiseweb_Getclicky>
+            </modules>
+        </translate>
+        
     </adminhtml>
 
     <global>
