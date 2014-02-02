@@ -1,5 +1,5 @@
 <_>
-   <form_key>RC6LKKA6xuA5dQi2</form_key>
+   <form_key>Qbd6HnXHLx3ggdCt</form_key>
    <name>Optimiseweb_Getclicky</name>
    <channel>community</channel>
    <version_ids>
@@ -11,7 +11,7 @@
 This extension comes with a complete configuration screen where all options can be configured.</description>
    <license>Open Software License (OSL)</license>
    <license_uri>http://opensource.org/licenses/osl-3.0.php</license_uri>
-   <version>0.1.10</version>
+   <version>0.2.0</version>
    <stability>stable</stability>
    <notes>* Code tidy and formatting</notes>
    <authors>
@@ -42,7 +42,7 @@ This extension comes with a complete configuration screen where all options can 
             <max/>
          </max>
          <files>
-            <files>                </files>
+            <files>                 </files>
          </files>
       </package>
       <extension>
@@ -64,6 +64,7 @@ This extension comes with a complete configuration screen where all options can 
          <target>mageetc</target>
          <target>magedesign</target>
          <target>magedesign</target>
+         <target>magelocale</target>
       </target>
       <path>
          <path/>
@@ -71,6 +72,7 @@ This extension comes with a complete configuration screen where all options can 
          <path>modules/Optimiseweb_Getclicky.xml</path>
          <path>frontend/base/default/layout/optimiseweb_getclicky.xml</path>
          <path>frontend/base/default/template/optimiseweb/getclicky</path>
+         <path>en_US/Optimiseweb_Getclicky.csv</path>
       </path>
       <type>
          <type>file</type>
@@ -78,6 +80,7 @@ This extension comes with a complete configuration screen where all options can 
          <type>file</type>
          <type>file</type>
          <type>dir</type>
+         <type>file</type>
       </type>
       <include>
          <include/>
@@ -85,8 +88,10 @@ This extension comes with a complete configuration screen where all options can 
          <include/>
          <include/>
          <include/>
+         <include/>
       </include>
       <ignore>
+         <ignore/>
          <ignore/>
          <ignore/>
          <ignore/>
