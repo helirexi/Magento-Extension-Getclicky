@@ -11,7 +11,7 @@
 
     <modules>
         <Optimiseweb_Getclicky>
-            <version>0.2.0</version>
+            <version>0.2.1</version>
         </Optimiseweb_Getclicky>
     </modules>
 
@@ -38,20 +38,6 @@
     </frontend>
 
     <adminhtml>
-        
-        <menu>
-            <optimiseweball translate="title" module="getclicky">
-                <title>Optimise Web</title>
-                <sort_order>71</sort_order>
-                <children>
-                    <getclicky translate="title" module="getclicky">
-                        <title>GetClicky Integration</title>
-                        <sort_order>5</sort_order>
-                        <action>adminhtml/system_config/edit/section/optimisewebgetclickyconfig</action>
-                    </getclicky>
-                </children>
-            </optimiseweball>
-        </menu>
         
         <translate>
             <modules>
@@ -113,6 +99,10 @@
                 <goal_type>dynamic</goal_type>
                 <goal_name>Cart Page</goal_name>
             </goal_cart_page>
+            <menu>
+                <optimiseweball_enabled>1</optimiseweball_enabled>
+                <getclicky_enabled>1</getclicky_enabled>
+            </menu>
         </optimisewebgetclickyconfig>
     </default>
 

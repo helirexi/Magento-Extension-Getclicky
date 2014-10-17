@@ -29,27 +29,13 @@
 
             <groups>
 
-                <getclickyabout translate="label comment">
-                    <label>About - GetClicky Integration by Optimise Web</label>
-                    <comment><![CDATA[This Magento extension is developed by <a href="http://optimiseweb.co.uk/" target="_optimiseweb" style="text-decoration: none;">Optimise Web</a>. If you do not have a GetClicky account, you can sign up here: <a href="http://getclicky.com/240502" target="_getclicky" style="text-decoration: none;">GetClicky</a><script type="text/javascript">$('optimisewebgetclickyconfig_getclickyabout').hide();</script>]]>
-                    </comment>
-                    <sort_order>1</sort_order>
+                <hint>
+                    <frontend_model>getclicky/adminhtml_system_config_fieldset_hint</frontend_model>
+                    <sort_order>0</sort_order>
                     <show_in_default>1</show_in_default>
                     <show_in_website>1</show_in_website>
                     <show_in_store>1</show_in_store>
-                    <fields>
-                        <ignored>
-                            <label></label>
-                            <comment><![CDATA[<div id="J5BhDU3P26384w8v"></div><script type="text/javascript">$('J5BhDU3P26384w8v').up('tr').remove();</script>]]>
-                            </comment>
-                            <frontend_type>text</frontend_type>
-                            <sort_order>1</sort_order>
-                            <show_in_default>1</show_in_default>
-                            <show_in_website>1</show_in_website>
-                            <show_in_store>1</show_in_store>
-                        </ignored>
-                    </fields>
-                </getclickyabout>
+                </hint>
 
                 <getclickygeneral translate="label comment">
                     <label>General Settings</label>
@@ -280,6 +266,42 @@
                         </goal_id>
                     </fields>
                 </goal_cart_page>
+
+                <menu translate="label comment" module="getclicky">
+                    <label>Admin Menu Control</label>
+                    <comment>
+                        <![CDATA[
+                        <div class="notice-msg" style="background-image: none!important; padding: 5px;">
+                        <p style="margin-bottom: 0;">The 'Optimise Web' menu group acts as a parent menu item for the various modules developed by Optimise Web. Use the following settings if you do not wish to see the link in the admin menu and would rather manually visit the System Config.</p>
+                        </div>
+                        ]]>
+                    </comment>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>999</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <optimiseweball_enabled translate="label tooltip comment" module="getclicky">
+                            <label>Enable the 'Optimise Web' Admin menu group?</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </optimiseweball_enabled>
+                        <getclicky_enabled translate="label tooltip comment" module="getclicky">
+                            <label>Enable the 'GetClicky Integration' link from the Admin menu?</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </getclicky_enabled>
+                    </fields>
+                </menu>
 
             </groups>
 

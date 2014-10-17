@@ -8,6 +8,26 @@
 */
 -->
 <config>
+    <menu>
+        <optimiseweball translate="title" module="getclicky">
+            <title>Optimise Web</title>
+            <sort_order>71</sort_order>
+            <children>
+                <getclicky translate="title" module="getclicky">
+                    <title>GetClicky Integration</title>
+                    <sort_order>5</sort_order>
+                    <action>adminhtml/system_config/edit/section/optimisewebgetclickyconfig</action>
+                    <depends>
+                        <config>optimisewebgetclickyconfig/menu/getclicky_enabled</config>
+                    </depends>
+                </getclicky>
+            </children>
+            <depends>
+                <config>optimisewebgetclickyconfig/menu/optimiseweball_enabled</config>
+            </depends>
+        </optimiseweball>
+    </menu>
+        
     <acl>
         <resources>
             <all>
