@@ -4,8 +4,8 @@
  * Optimiseweb Getclicky Block Adminhtml System Config Fieldset Hint
  *
  * @package     Optimiseweb_Getclicky
- * @author      Kathir Vel (sid@optimiseweb.co.uk)
- * @copyright   Copyright (c) 2014 Optimise Web
+ * @author      Kathir Vel (vkathirvel@gmail.com)
+ * @copyright   Copyright (c) 2015 Kathir Vel
  * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 class Optimiseweb_Getclicky_Block_Adminhtml_System_Config_Fieldset_Hint extends Mage_Adminhtml_Block_Abstract implements Varien_Data_Form_Element_Renderer_Interface
@@ -42,11 +42,6 @@ class Optimiseweb_Getclicky_Block_Adminhtml_System_Config_Fieldset_Hint extends 
     public function getCheckExtensions()
     {
         return array();
-    }
-
-    private function getAdminEmail()
-    {
-        return Mage::getSingleton('admin/session')->getUser()->getEmail();
     }
 
     public function getOptimiseWebUrl()
@@ -92,10 +87,7 @@ class Optimiseweb_Getclicky_Block_Adminhtml_System_Config_Fieldset_Hint extends 
         $aux = (array_key_exists('Enterprise_Enterprise', $modulesArray)) ? 'EE' : 'CE';
         $mageVersion = Mage::getVersion();
         $mage = 'Magento_' . $aux . '_' . $mageVersion;
-        $hash = md5($ext . '_' . $mage . '_' . $ext);
-        $url = Mage::getBaseUrl();
-        $email = $this->getAdminEmail();
-        return 'extension=' . $ext . '&magento=' . $mage . '&url=' . $url . '&email=' . $email . '&ctrl=' . $hash;
+        return 'extension=' . $ext . '&magento=' . $mage;
     }
 
 }
