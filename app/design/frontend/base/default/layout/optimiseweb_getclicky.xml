@@ -42,7 +42,7 @@
         </reference>
     </checkout_onepage_index>
 
-    <!-- Cart Page -->
+    <!-- Cart Page (Check's out cart index) -->
     <checkout_cart_index>
         <reference name="before_body_end">
             <block type="core/template" name="Optimiseweb.Getclicky.Goals.Cart.Page" before="Optimiseweb.Getclicky.Tracker">
